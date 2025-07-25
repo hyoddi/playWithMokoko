@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mokoko {
+  width: 644px;
+  height: 644px;
+  bottom: -290px; /* 화면 아래 위치 */
+  position: absolute; /* 절대 위치로 설정 */
+  background-image: url('assets/mokoko_sprite.png');
+  background-size: 200% auto; /* 가로에 프레임 2개라면 */
+  background-position: left top;
+  transition: left 0.2s ease, top 0.2s ease, transform 0.2s ease;
+}
+
+/* CSS 가상 클래스, 요소 위에 마우스 올리면...*/
+.mokoko:hover {
+  transform: translateY(-80px); /* 살짝 띄움 */
+}
+
+/* 클릭 시 오른쪽 프레임으로 변경하는 클래스 */
+.mokoko.clicked {
+  background-position: right top; 
+}
