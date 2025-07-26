@@ -1,5 +1,5 @@
 // openweatherapi
-const apiKey = '7736aee0e875b67193f98ee21dd52e1b'; 
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 const city = 'Ansan, KR'; // 우리집
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=kr`; // 한글로 받아보자
 
