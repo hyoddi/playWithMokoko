@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Cafe24Ohsquare';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: '양진체';
+    src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -18,6 +33,16 @@ body {
   background-size: 200% auto; /* 가로에 프레임 2개라면 */
   background-position: left top;
   transition: left 0.2s ease, top 0.2s ease, transform 0.2s ease;
+}
+
+.clock {
+  position: absolute;
+  top: 160px; /* 화면 아래 위치 */
+  font-family: '양진체';
+  font-size: 70px;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* CSS 가상 클래스, 요소 위에 마우스 올리면...*/
