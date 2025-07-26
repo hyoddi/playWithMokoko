@@ -17,6 +17,7 @@ body {
   align-items: center;
 }
 
+/* 모코코 */
 .mokoko {
   width: 644px;
   height: 644px;
@@ -28,16 +29,6 @@ body {
   transition: left 0.2s ease, top 0.2s ease, transform 0.2s ease;
 }
 
-.clock {
-  position: absolute;
-  top: 160px; /* 화면 아래 위치 */
-  font-family: '양진체';
-  font-size: 70px;
-  color: #000000;
-  padding: 10px;
-  border-radius: 5px;
-}
-
 /* CSS 가상 클래스, 요소 위에 마우스 올리면...*/
 .mokoko:hover {
   transform: translateY(-80px); /* 살짝 띄움 */
@@ -46,4 +37,71 @@ body {
 /* 클릭 시 오른쪽 프레임으로 변경하는 클래스 */
 .mokoko.clicked {
   background-position: right top; 
+}
+
+
+/* 시계 */
+.clock {
+  position: absolute;
+  top: 130px; /* 화면 아래 위치 */
+  font-family: '양진체';
+  font-size: 70px;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+}
+/* 날씨 */
+.weather {
+  position: absolute;
+  top: 60px; /* 화면 아래 위치 */
+  font-family: '양진체';
+  font-size: 30px;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+/* 구글 검색창 */
+.google-search {
+  position: absolute;
+  top: 250px; /* 시계보다 아래에 배치 */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  font-family: '양진체';
+}
+
+.search-input {
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 500px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4cc452;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #4cc452;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #409944;
 }

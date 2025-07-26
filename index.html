@@ -8,12 +8,19 @@
 <body>
   <div id ="clock" class="clock">
     <span id="time">00:00:00</span>
-
   </div>
   <div id = "weather" class="weather">
     <span id="weather-now"></span>
     <span id="temperature"></span>
   </div>
+  <div class="google-search">
+    <form class="search-form" action="https://www.google.com/search" method="GET" target="_blank">
+      <input class="search-input" type="text" name="q" placeholder="구글 검색어 입력" />
+      <button class="search-button" type="submit">검색</button>
+    </form>
+  </div>
+
+  
   <div id="mokoko" class="mokoko"></div>
   
   <script src="mokoko.js"></script>
