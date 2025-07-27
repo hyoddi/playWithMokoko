@@ -37,6 +37,12 @@ loginButton.addEventListener('click', (event) => { // 로그인 버튼 클릭 �
     return;
   }
 
+
+  // 로컬스토리지에 저장
+  localStorage.setItem('mokokoLevel', levelValue);
+  localStorage.setItem('mokokoName', usernameValue);
+
+
   level.textContent = `Lv.${levelValue}`;
   username.textContent = usernameValue || '기본 모코코'; // 이름이 없으면 기본값
 
@@ -44,4 +50,22 @@ loginButton.addEventListener('click', (event) => { // 로그인 버튼 클릭 �
   loginForm.style.display = 'none';
 
   mokokoName.style.display = 'flex';
+});
+
+
+// 페이지 로드 시 저장된 로그인 정보 및 투두리스트 불러오기
+window.addEventListener('load', () => {
+  const savedLevel = localStorage.getItem('mokokoLevel');
+  const savedName = localStorage.getItem('mokokoName');
+
+  if (savedLevel) {
+    level.textContent = `Lv.${savedLevel}`;
+  }
+  if (savedName) {
+    username.textContent = savedName || '기본 모코코';
+  }
+
+  if (savedLevel || savedName) {
+    mokokoName.style.display = 'flex';
+  }
 });
