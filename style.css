@@ -40,25 +40,91 @@ body {
 }
 
 
+/* 메뉴 */
+.menu-icon {
+  position: absolute;
+  object-fit: cover;
+  width: 50px; /* 메뉴 아이콘 크기 */
+  height: 50px; /* 메뉴 아이콘 크기 */
+  top: 25px; /* 화면 위쪽 위치 */
+  right: 20px; /* 화면 오른쪽 위치 */
+  cursor: pointer;
+}
+
+/* 로그인 아이콘 */
+.user-icon {
+  visibility: hidden; /* 초기에는 숨김 */
+  position: absolute;
+  object-fit: cover;
+  width: 50px; /* 로그인 아이콘 크기 */
+  height: 50px; /* 로그인 아이콘 크기 */
+  top: 85px; /* 메뉴 바 아래 위치 */
+  right: 20px;
+  cursor: pointer;
+} 
+
+
+
+/* 체크 아이콘 */
+.toDo-icon {
+  visibility: hidden; /* 초기에는 숨김 */
+  position: absolute;
+  object-fit: cover;
+  width: 50px; /* 체크 아이콘 크기 */
+  height: 50px; /* 체크 아이콘 크기 */
+  top: 145px; /* 화면 위쪽 위치 */
+  right: 20px; /* 화면 오른쪽 위치 */
+  cursor: pointer;
+}
+
+
+/* 메뉴 아이콘 애니메이션 */
+@keyframes slideDown {
+  from {
+    transform: translateY(-30%); /*어디서부터 날라오는가*/
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.slideDown {
+  visibility: visible;
+  animation: slideDown 0.1s forwards;
+}
+
+
 /* 시계 */
 .clock {
   position: absolute;
   top: 130px; /* 화면 아래 위치 */
+  color: #000000;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center;     /* 중앙 정렬 */
+  gap: 4px;
+}
+
+#time {
   font-family: '양진체';
   font-size: 70px;
-  color: #000000;
-  padding: 10px;
-  border-radius: 5px;
 }
+
+#date {
+  font-family: '양진체';
+  font-size: 20px;
+}
+
 /* 날씨 */
 .weather {
   position: absolute;
-  top: 60px;
+  top: 25px;
+  left: 30px;
   font-family: '양진체';
   font-size: 30px;
   color: #000000;
   padding: 10px;
   border-radius: 5px;
+  transition: font-size 0.2s ease;
 }
 
 
@@ -96,6 +162,8 @@ body {
   border-color: #4cc452;
 }
 
+
+/* 검색 버튼 */
 .search-button {
   padding: 10px 20px;
   background-color: #4cc452;
@@ -106,7 +174,57 @@ body {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
+/* 검색 버튼 호버 효과 : 색깔 진해짐*/
 .search-button:hover {
   background-color: #409944;
+}
+
+
+
+
+/* 로그인 창 */
+/* 팝업되면 뒤에 반투명해지는 배경 */
+.login-popup {
+  display: none; /* 처음엔 숨김 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 팝업 박스 */
+.login-popup-content {
+  display: none; /* 처음엔 숨김 */
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px;
+  flex-direction: column;
+  gap: 10px;
+  font-family: '양진체';
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 간단한 등장 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

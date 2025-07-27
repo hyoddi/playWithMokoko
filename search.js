@@ -13,10 +13,4 @@ function handleSearchInputSize(){
     }
 }
 
-
 handleSearchInputSize(); // 초기 크기 설정
-
-window.addEventListener('resize', () => {
-    // 창 크기에 따라 검색창 너비 조정
-    handleSearchInputSize();
-});

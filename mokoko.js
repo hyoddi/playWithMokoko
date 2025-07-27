@@ -7,7 +7,7 @@ let isClicked= false; // 마우스 눌렸을 때 확인
 function calPosition() {
   // 모코코가 위치해야할 곳을 계산
   let mokokoX = window.innerWidth / 2 - mokoko.offsetWidth / 2; // 창 절반에 모코코 크기 절반 빼주기 (좌측 기준이라)
-  let mokokoY = window.innerHeight - 358; // 창 높이(바닥)에서 항상 눈만 보이게
+  let mokokoY = window.innerHeight - 353.5; // 창 높이(바닥)에서 항상 눈만 보이게
   return { X: mokokoX, Y: mokokoY };
 }
 
