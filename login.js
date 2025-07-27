@@ -2,46 +2,46 @@ const userIcon = document.getElementById('user-icon');
 const loginBackground = document.getElementById('login-popup');
 const loginForm = document.querySelector('.login-popup-content');
 
-const level = document.querySelector('.level');
-const username = document.querySelector('.username');
+const levelInput = document.querySelector('.level-input');
+const usernameInput = document.querySelector('.username-input');
 
-
-userIcon.addEventListener('click', () => {
-  
-
-  loginBackground.style.display = 'flex';
-  loginForm.style.display = 'flex';
-});
-
-
-// 로그인 팝업 닫기 버튼
+const loginButton = document.querySelector('.login-button');
 const closeBtn = document.querySelector('.close-btn');
 
-closeBtn.addEventListener('click', () => {
+const level = document.querySelector('.level');
+const username = document.querySelector('.username');
+const mokokoName = document.getElementById('mokoko-name');
+
+userIcon.addEventListener('click', () => { // 모코코 아이콘 클릭 시 
+  loginBackground.style.display = 'flex';
+  loginForm.style.display = 'flex';
+
+  // 투두 팝업 창 열려 있으면 닫기 (이벤트 리스너 효율을 위해 여기다..)
+  document.getElementById('todo-popup').style.display = 'none';
+
+});
+
+closeBtn.addEventListener('click', () => { // 닫기 버튼
   loginBackground.style.display = 'none';
   loginForm.style.display = 'none';
 });
 
-// 로그인 버튼 클릭 이벤트
-const loginButton = document.querySelector('.login-button');
+loginButton.addEventListener('click', (event) => { // 로그인 버튼 클릭 시 (로 정했다!)
+  event.preventDefault(); // 기본 동작 방지 (폼 제출 방지)
 
-loginButton.addEventListener('click', (event) => {
-  event.preventDefault(); // 기본 폼 제출 동작 방지
-  
-  const usernameInput = document.querySelector('.username-input').value.trim();
-  const levelInput = document.querySelector('.level-input').value.trim();
+  const levelValue = levelInput.value.trim(); // 레벨 입력값
+  const usernameValue = usernameInput.value.trim(); // 이름 입력값
 
-  // 숫자나 비어있으면 거르기
-  if (!levelInput || isNaN(levelInput)) {
+  if (!levelValue || isNaN(levelValue)) { // 레벨이 비어있거나 숫자가 아니면 거르기
     alert('레벨을 숫자로 입력해주세요.');
-    return; // 실행 중단
+    return;
   }
 
-  // username, level 요소가 존재해야 함
-  level.textContent = `Lv.${levelInput}`;
-  username.textContent = usernameInput || '기본 모코코'; // 이름 없으면 기본값
+  level.textContent = `Lv.${levelValue}`;
+  username.textContent = usernameValue || '기본 모코코'; // 이름이 없으면 기본값
 
-  // 로그인 창 닫기
-  loginBackground.style.display = 'none';
+  loginBackground.style.display = 'none'; // 로그인 창 끄기
   loginForm.style.display = 'none';
+
+  mokokoName.style.display = 'flex';
 });

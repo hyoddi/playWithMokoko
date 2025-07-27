@@ -57,11 +57,13 @@ window.addEventListener('pointerup', () => {
   mokoko.style.left = `${X}px`; // 모코코 원래 위치
   mokoko.style.top = `${Y}px`; // 모코코 원래 위치
   mokoko.style.transition = ''; // 원래의 부드러운 효과로 되돌리기
+
 });
 
 // 창 크기 조절되도 항상 모코코
 window.addEventListener('resize', () => {
   let { X, Y } = calPosition();
-  mokoko.style.left = `${X}px`;
+  mokoko.style.left = `${X}px`; 
   mokoko.style.top = `${Y}px`;
+
 });

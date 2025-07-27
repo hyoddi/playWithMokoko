@@ -41,12 +41,24 @@
     <div class="login-popup-content">
       <span class="close-btn">&times;</span> <!-- 닫기 버튼 -->
       <h2>모코코 설정</h2>
-      <input type="text" class="level-input" placeholder="레벨" />
-      <input type="text" class="username-input" placeholder="모코코 이름" />
+      <input type="text" class="styled-input level-input" placeholder="레벨" />
+      <input type="text" class="styled-input username-input" placeholder="모코코 이름" />
       <button class="login-button">로 정했다!</button>
     </div>
   </div>
 
+
+  <div id="todo-popup" class="todo-popup hidden">
+    <div class="todo-popup-content">
+      <span class="close-todo">&times;</span>
+      <h2>모코코 할 일</h2>
+      <form id="todo-form">
+        <input type="text" id="todo-input" class="styled-input" placeholder="할 일 추가하기..." />
+        <button type="submit">추가</button>
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
+  </div>
 
 
   <script src = "menu.js"></script>
@@ -54,7 +66,8 @@
   <script src="time.js"></script>
   <script type="module" src="weather.js"></script>
   <script src="search.js"></script>
-  <script src="login.js"></script>  
+  <script src="login.js"></script>
+  <script src = "toDo.js"></script>
   <script src="windowSizeHandling.js"></script>
 </body>
 </html>

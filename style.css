@@ -61,7 +61,7 @@ body {
   top: 85px; /* 메뉴 바 아래 위치 */
   right: 20px;
   cursor: pointer;
-} 
+}
 
 
 
@@ -76,6 +76,88 @@ body {
   right: 20px; /* 화면 오른쪽 위치 */
   cursor: pointer;
 }
+
+/* 할 일 팝업 */
+.todo-popup {
+  position: fixed;
+  top: 215px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1001;
+  border-radius: 10px;
+}
+
+.todo-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "양진체";
+}
+
+.todo-popup .close-todo {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#todo-form {
+  display: flex;
+  gap: 5px;
+}
+
+#todo-form input {
+  flex: 1;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f1f1;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.todo-popup button {
+  font-family: '양진체', sans-serif;
+}
+
+#todo-list li.completed {
+  background: #d1ffd1; /* 완료된 할 일은 연한 초록색 배경 */
+  opacity: 0.6;
+}
+
+
+/* 입력창 스타일 통일 */
+.styled-input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-family: '양진체';
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* 입력창 포커스 시 스타일 */
+.styled-input:focus {
+  border-color: #92d050;
+  outline: none;
+}
+
 
 
 /* 메뉴 아이콘 애니메이션 */
@@ -189,7 +271,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100vw; /* 화면 크기 비례 */
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
   justify-content: center;
@@ -209,6 +291,16 @@ body {
   font-family: '양진체';
   animation: fadeIn 0.3s ease-out;
 }
+
+.login-popup-content button {
+  font-size: 24px;
+  font-family: '양진체';
+  text-align: center;
+  padding: 10px;   /* 위아래 10px 공간 주기 */
+  box-sizing: border-box; /* 패딩이 크기 안에 포함되도록 */
+  cursor: pointer;       /* 마우스 올리면 손가락 커서 */
+}
+
 
 /* 닫기 버튼 */
 .close-btn {
@@ -241,7 +333,6 @@ body {
   color: #000000;
   font-family: '양진체';
   font-size: 24px;
-  display: flex;
   flex-direction: column; /* 세로 정렬 */
   align-items: center;     /* 중앙 정렬 */
 }
